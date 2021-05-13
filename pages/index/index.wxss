@@ -1,0 +1,72 @@
+page {
+  display: flex;  /*设置弹性波布局*/
+  flex-direction: column;  /*设置布局方向为竖向，子元素则垂直竖向布局，默认为横向*/
+  height: 100%;
+}
+
+.result {
+  flex: 1;
+  background: #e573ac;
+  position: relative;  /*设置为相对定位，则其子元素才能使用相对定位*/
+}
+
+.result-num {
+  position: absolute;
+  font-size: 35px;
+  bottom: 10vh; /* vh.wh,css中的新单位，规定窗口宽度和高度为100vw和100vh，将窗口平均分为100份，在实际开放中使用rpx和百分比就足够了*/
+  right: 3vw;
+}
+
+.result-op {
+  font-size: 30pt;
+  color: rgb(40, 31, 49);
+  position: absolute;
+  bottom: 1vh;
+  right: 3vw;
+}
+
+.btns {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 17pt;
+  border-top: 1rpx solid #ccc;
+  border-left: 1rpx solid #ccc;
+
+}
+
+
+.bg { /*点击后改变颜色*/
+  background: rgb(255, 121, 166);
+}
+
+.btns>view {
+  flex: 1;
+  display: flex;
+}
+
+.btns>view>view {
+  flex-basis: 25%;
+  /* 每个方框划线 */
+  border-right: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 零方框 */
+.btns>view:last-child>view:first-child {
+  flex-basis: 50%;
+}
+
+/* C位 */
+.btns>view:first-child>view:first-child {
+  color: #ff0000;
+}
+
+/* 最右边一列 */
+.btns>view>view:last-child {
+  color: #fc8e00;
+}
